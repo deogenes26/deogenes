@@ -12,6 +12,7 @@ public class Bauzinho : MonoBehaviour
     ItemManager item;
     Fome matafome;
     [SerializeField] EitensBau eitensBau = EitensBau.moeda;
+    public AudioClip bausom;
 
 
     void Start()
@@ -39,8 +40,9 @@ public class Bauzinho : MonoBehaviour
         {
             case EitensBau.chave:
                 item.valorchave = chave;
-                anima.Play("BauChave");             
-                                                     
+                anima.Play("BauChave");
+                AudioM.inst.PlayAudio(bausom);
+
                 break;
             case EitensBau.moeda:
                 print("moeda");
@@ -50,7 +52,8 @@ public class Bauzinho : MonoBehaviour
                 anima.Play("bauCoxa");
                 matafome.fome += 30f;
                 print("vida");
-                
+                AudioM.inst.PlayAudio(bausom);
+
                 break;
             case EitensBau.estrela:
                 print("estrela");
@@ -60,9 +63,9 @@ public class Bauzinho : MonoBehaviour
         
 
     }
-    void Destuir()
+    public void Destuir()
     {
-        print("cabum");
+        Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

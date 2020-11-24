@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coxa : MonoBehaviour
 {
     Fome matarfome;
+    public AudioClip itemsom;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class Coxa : MonoBehaviour
         {
             if (matarfome.fome < 90f && matarfome.fome > 0f )
             {
+                AudioM.inst.PlayAudio(itemsom);
                 matarfome.fome += 30f;
                 Destroy(gameObject);
             }

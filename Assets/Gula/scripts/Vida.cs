@@ -12,21 +12,19 @@ public class Vida : MonoBehaviour
     
     public Image[] vidavazia;
     public Image[] vida;
-    
 
-    void Start()
-    {
-        print(vidaatual);
-    }
+    public AudioClip danosom;
+         
+       
 
-    // Update is called once per frame
-    
-    public void Dano()
+      public void Dano()
     {
+        AudioM.inst.PlayAudio(danosom);
         if (vidaatual > minvida)
         {
             vidaatual -= 1;
-            print (vidaatual);
+            
+            
             VidaNahud();
 
         }
@@ -36,6 +34,15 @@ public class Vida : MonoBehaviour
         }
     }
     
+    public void VidaAdd()
+    {
+        if(vidaatual <= maxvida)
+        {
+            vidaatual ++;
+            VidaNahud();
+            
+        }
+    } 
     void VidaNahud()
     {
         
@@ -68,11 +75,5 @@ public class Vida : MonoBehaviour
     }
 
    
-    void OnTriggerEnter2D(Collider2D outro)
-    {
-        if (outro.gameObject.CompareTag("hit"))
-        {
-            Dano();
-        }
-    }
+    
 }

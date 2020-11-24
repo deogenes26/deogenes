@@ -12,11 +12,8 @@ public class Gula : MonoBehaviour
     public bool Pulo = false;
     Transform checkChao;
     public bool noChao = false;
-   
-   
-  
-    
-    
+    public AudioClip pulosom;
+
     [Header("andar")]
     Transform gulaTransforme;
     public bool face = false;
@@ -38,19 +35,16 @@ public class Gula : MonoBehaviour
     public float checkRadius = 0.3f;
     private Transform ladder;
     Collider2D col;
-
-   
-
-
-
+       
     private void Start()
     {
         gulaTransforme = GetComponent<Transform>();
         gula = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
         checkChao = gameObject.transform.Find("checkChao");
-        
        
+
+
         col = GetComponent<Collider2D>();
         ClimbLadder();
     }
@@ -67,6 +61,7 @@ public class Gula : MonoBehaviour
             Pulo = true;
             anima.SetTrigger("pulou");
             coyoteTime = Time.time;
+            
         }
          
         
@@ -95,6 +90,7 @@ public class Gula : MonoBehaviour
            
             gula.AddForce(new Vector2(0, forca));
             Pulo = false;
+            AudioM.inst.PlayAudio(pulosom);
 
         }
 
@@ -150,9 +146,9 @@ public class Gula : MonoBehaviour
             gula.isKinematic = true; 
            
 
-            float xPos = ladder.position.x;
+          float xPos = ladder.position.x;
 
-            transform.position = new Vector2(xPos, transform.position.y);
+          transform.position = new Vector2(xPos, transform.position.y);
         }
 
         if (climbing) 
@@ -195,11 +191,12 @@ public class Gula : MonoBehaviour
 
     }   
 
-         void OnTriggerEnter2D(Collider2D other)
+      public void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("escada"))
             {
                 ladder = other.transform;
             }
-        } }
+        } 
+}
 

@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4936cd9e7682d954fb5e6b37539e646e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  espetosom: {fileID: 8300000, guid: 3d85cd2f5d8bc4e4182406c1e54db85e, type: 3}

@@ -6,6 +6,7 @@ public class EspetoDano : MonoBehaviour
 {
     Animator anima;
     Vida vidaperdida;
+    public AudioClip espetosom;
     void Start()
     {
         anima = GetComponent<Animator>();
@@ -15,7 +16,7 @@ public class EspetoDano : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-           
+            AudioM.inst.PlayAudio(espetosom);
             vidaperdida = collision.gameObject.GetComponent<Vida>();
             vidaperdida.Dano();
             anima.Play("espinho");

@@ -9,7 +9,7 @@ public class Ataque : MonoBehaviour
     Animator anima;
     public float intervalodeataque;
     float proximoataque;
-    //golpear inimigo
+    public AudioClip espadasom;
 
 
 
@@ -31,6 +31,7 @@ public class Ataque : MonoBehaviour
         void Combo1()
         {
             anima.SetTrigger("1golpe");
+            AudioM.inst.PlayAudio(espadasom);
             proximoataque = Time.time + intervalodeataque;
         }
  }

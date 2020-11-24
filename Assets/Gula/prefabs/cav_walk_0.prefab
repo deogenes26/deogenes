@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 740038161}
   - component: {fileID: 740038162}
+  - component: {fileID: 1709225825}
   m_Layer: 0
   m_Name: 1golpe
   m_TagString: hit
@@ -57,6 +58,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.003839, y: 4.3861394}
   m_EdgeRadius: 0
+--- !u!114 &1709225825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740038160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a9b5bb09d2fb144b842a13ce222380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  espadasom: {fileID: 8300000, guid: 177820fb5447eaa4a9f03edf846f260e, type: 3}
 --- !u!1 &895063786119920346
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +147,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 8
   m_Sprite: {fileID: 5426533586175421969, guid: bb13502e30ca8f3469a20dfdc804bf45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

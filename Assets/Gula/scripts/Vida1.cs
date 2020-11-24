@@ -6,6 +6,7 @@ public class Vida1 : MonoBehaviour
 {
     // Start is called before the first frame update
     Vida Aumentaessavidaai;
+    public AudioClip itemsom;
     private void Start()
     {
         Aumentaessavidaai = FindObjectOfType<Vida>();
@@ -16,7 +17,8 @@ public class Vida1 : MonoBehaviour
         {
             if (Aumentaessavidaai.vidaatual <3)
             {
-                Aumentaessavidaai.vidaatual += 1;
+                AudioM.inst.PlayAudio(itemsom);
+                Aumentaessavidaai.VidaAdd();
                 Destroy(gameObject);
             }
         }
