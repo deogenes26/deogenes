@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,15 +10,19 @@ public class GameManager : MonoBehaviour
     Vida vidinha;
     Fome morrerdefome;
     public Vector2 lastCheckpointpos;
-    
-    
-    static GameManager instance;
-    void Awake()
+    public  GameObject uiMorte;
+   
+    public  GameObject uiganhou;
+    bool ispaused = false;
+
+
+    public static GameManager instance;
+   void Awake()
     {
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+           // DontDestroyOnLoad(instance);
         }
         else
         {
@@ -30,18 +35,39 @@ public class GameManager : MonoBehaviour
       
         vidinha = FindObjectOfType<Vida>();
         morrerdefome = FindObjectOfType<Fome>();
+        
+    }
+           
+   public  void CheckPoint()
+    {
+        ispaused = true;
+         if(ispaused)
+        {
+            Time.timeScale = 0;
+            uiMorte.SetActive(true);
+        }
+      
+        
     }
 
-    
-    
-   public static void CheckPoint()
+    public  void ChamaDenovo()
     {
-      
-       
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-           
-            
-          
+        Time.timeScale = 1;
+        uiMorte.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                 
     }
-    
+    public void Vitoria()
+    {
+        Time.timeScale = 0;
+        uiganhou.SetActive(true);
+    }
+    public void Sair()
+    {
+        Application.Quit();
+      #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+      #endif
+
+    }
 }

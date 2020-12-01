@@ -137,6 +137,10 @@ public class Gula : MonoBehaviour
     }
     void ClimbLadder()
     {
+        if(ladder == null)
+        {
+            return;
+        }
         bool up = Physics2D.OverlapCircle(transform.position, checkRadius, ladderMask); 
         bool down = Physics2D.OverlapCircle(transform.position + new Vector3(0, -1), checkRadius, ladderMask);
 
@@ -193,6 +197,10 @@ public class Gula : MonoBehaviour
 
       public void OnTriggerEnter2D(Collider2D other)
         {
+        if (other == null)
+        {
+            return;
+        }
             if (other.gameObject.layer == LayerMask.NameToLayer("escada"))
             {
                 ladder = other.transform;

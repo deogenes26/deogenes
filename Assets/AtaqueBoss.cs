@@ -14,8 +14,14 @@ public class AtaqueBoss : MonoBehaviour
         vidinha = FindObjectOfType<Vida>();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            vidinha.Dano();
+        }
+    }
 
-   
 
 
 

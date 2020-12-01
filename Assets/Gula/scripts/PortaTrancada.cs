@@ -9,6 +9,7 @@ public class PortaTrancada : MonoBehaviour
     ItemManager item;
     public int fechadura;
     BoxCollider2D porta;
+    public AudioClip portaaudio;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class PortaTrancada : MonoBehaviour
         {
             anima.Play("portaAbrindo");
             porta.enabled = false;
+            AudioM.inst.PlayAudio(portaaudio);
         }
     }
 

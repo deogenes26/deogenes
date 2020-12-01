@@ -12,6 +12,8 @@ TagManager:
   - bau
   - item
   - boss
+  - uiMorte
+  - uiGanhou
   layers:
   - Default
   - TransparentFX

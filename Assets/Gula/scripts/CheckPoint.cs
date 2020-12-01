@@ -7,6 +7,7 @@ public class CheckPoint : MonoBehaviour
     public Color minhacor;
     SpriteRenderer balao;
     GameManager gm;
+    public AudioClip cpsom;
     void Start()
     {
         balao = GetComponent<SpriteRenderer>();
@@ -20,6 +21,7 @@ public class CheckPoint : MonoBehaviour
         {
             balao.color = minhacor;
             gm.lastCheckpointpos = transform.position;
+            AudioM.inst.PlayAudio(cpsom);
         }
     }
 }

@@ -10,6 +10,7 @@ public class Ataque : MonoBehaviour
     public float intervalodeataque;
     float proximoataque;
     public AudioClip espadasom;
+    VidaBoss bossvida;
 
 
 
@@ -17,10 +18,11 @@ public class Ataque : MonoBehaviour
     void Start()
     {
         anima = gameObject.GetComponent<Animator>();
+        bossvida = FindObjectOfType<VidaBoss>();
     }
 
 
-        // Update is called once per frame
+       
         void Update()
         {
             if (Input.GetKey(KeyCode.Mouse0) && Time.time > proximoataque)
@@ -34,5 +36,18 @@ public class Ataque : MonoBehaviour
             AudioM.inst.PlayAudio(espadasom);
             proximoataque = Time.time + intervalodeataque;
         }
- }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null)
+        {
+            return;
+        }
+        if (collision.gameObject.CompareTag("boss"))
+        {
+            bossvida.Dano();
+           
+        }
+    }
+}
     

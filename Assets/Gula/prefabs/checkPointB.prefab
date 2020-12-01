@@ -123,5 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minhacor: {r: 1, g: 1, b: 1, a: 1}
-  gula: {fileID: 0}
-  posicaoCheck: {fileID: 0}
+  cpsom: {fileID: 8300000, guid: 852176856e8adb443a866dd455df02f5, type: 3}

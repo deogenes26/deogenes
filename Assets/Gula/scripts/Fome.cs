@@ -24,7 +24,7 @@ public class Fome : MonoBehaviour
         estomago.fillAmount = fome / 100 ;
         if(fome <= 0)
         {
-            GameManager.CheckPoint();
+            GameManager.instance.CheckPoint();
         }
         
 
