@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-           // DontDestroyOnLoad(instance);
+            DontDestroyOnLoad(instance);
         }
         else
         {
@@ -68,6 +68,5 @@ public class GameManager : MonoBehaviour
       #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
       #endif
-
     }
 }
