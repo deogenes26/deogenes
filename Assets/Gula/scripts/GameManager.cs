@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(instance);
+            if (uiMorte) DontDestroyOnLoad(uiMorte);
+            if (uiganhou) DontDestroyOnLoad(uiganhou);
         }
         else
         {

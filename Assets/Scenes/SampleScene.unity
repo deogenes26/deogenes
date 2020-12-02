@@ -6108,7 +6108,6 @@ GameObject:
   - component: {fileID: 341827100}
   - component: {fileID: 341827099}
   - component: {fileID: 341827098}
-  - component: {fileID: 341827102}
   m_Layer: 5
   m_Name: morte
   m_TagString: uiMorte
@@ -6196,18 +6195,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &341827102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341827097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baf82b19d4e372459216f292d4040a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &359625054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16329,7 +16316,6 @@ GameObject:
   - component: {fileID: 1543021981}
   - component: {fileID: 1543021980}
   - component: {fileID: 1543021979}
-  - component: {fileID: 1543021983}
   m_Layer: 5
   m_Name: vitoria
   m_TagString: uiMorte
@@ -16417,18 +16403,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1543021983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543021978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baf82b19d4e372459216f292d4040a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1558386575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16520,7 +16494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.717}
   m_AnchorMin: {x: 0.04660417, y: 0}
   m_AnchorMax: {x: 1, y: 0.952}
-  m_AnchoredPosition: {x: -4.5999994, y: 6}
+  m_AnchoredPosition: {x: -4.6000013, y: 6}
   m_SizeDelta: {x: 8.781662, y: 28.867401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602910781
@@ -88955,7 +88929,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4178435563986817127, guid: 0682c9212bed7e941b53b761d70df1e0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0682c9212bed7e941b53b761d70df1e0, type: 3}
 --- !u!4 &4178435563787941025 stripped
 Transform:
